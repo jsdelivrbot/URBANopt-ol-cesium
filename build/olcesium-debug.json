@@ -1,0 +1,8 @@
+{
+  "src": [
+    "src/**/*.js",
+    "ol/src/**/*.js",
+    "ol/build/ol.ext/*.js"
+  ],
+  "exports": ["*"]
+}
