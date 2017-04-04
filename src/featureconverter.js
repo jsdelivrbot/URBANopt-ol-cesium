@@ -458,15 +458,18 @@ olcs.FeatureConverter.prototype.olPolygonGeometryToCesium = function(layer, feat
       }
     }
 
+    const height = feature.getProperties().height || 0;
     fillGeometry = new Cesium.PolygonGeometry({
       // always update Cesium externs before adding a property
       polygonHierarchy,
+      extrudedHeight: height,
       perPositionHeight: true
     });
 
     outlineGeometry = new Cesium.PolygonOutlineGeometry({
       // always update Cesium externs before adding a property
       polygonHierarchy: hierarchy,
+      extrudedHeight: height,
       perPositionHeight: true
     });
   }
