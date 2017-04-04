@@ -28958,6 +28958,10 @@ olcs.FeatureConverter.prototype.olPointGeometryToCesium = function(layer, featur
   goog.asserts.assert(olGeometry.getType() == 'Point');
   olGeometry = olcs.core.olGeometryCloneTo4326(olGeometry, projection);
 
+  if (feature.getProperties()['hideInCesium']) {
+    return null;
+  }
+
   const imageStyle = style.getImage();
   if (imageStyle) {
     if (imageStyle instanceof ol.style.Icon) {
